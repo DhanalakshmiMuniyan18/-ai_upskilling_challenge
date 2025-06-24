@@ -35,7 +35,7 @@ public class QualityUpdateStrategyFactory {
             throw new IllegalArgumentException("Item cannot be null");
         }
         
-        ItemType itemType = ItemType.fromName(item.name);
+        ItemType itemType = ItemType.fromName(item.getName());
         return STRATEGY_CACHE.get(itemType);
     }
     

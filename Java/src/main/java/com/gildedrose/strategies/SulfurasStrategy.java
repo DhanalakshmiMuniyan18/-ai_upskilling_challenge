@@ -15,8 +15,8 @@ public class SulfurasStrategy extends AbstractQualityUpdateStrategy {
     public void updateQuality(Item item) {
         // Sulfuras never changes in quality
         // Quality is set to legendary value if not already set
-        if (item.quality != SULFURAS_QUALITY) {
-            item.quality = SULFURAS_QUALITY;
+        if (item.getQuality() != SULFURAS_QUALITY) {
+            item.setQuality(SULFURAS_QUALITY);
         }
     }
     

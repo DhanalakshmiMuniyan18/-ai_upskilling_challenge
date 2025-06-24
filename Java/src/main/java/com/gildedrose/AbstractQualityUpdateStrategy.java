@@ -50,9 +50,11 @@ public abstract class AbstractQualityUpdateStrategy implements QualityUpdateStra
      * @param amount the amount to increase by
      */
     protected void increaseQuality(Item item, int amount) {
-        item.quality += amount;
-        if (item.quality > MAX_QUALITY) {
-            item.quality = MAX_QUALITY;
+        int newQuality = item.getQuality() + amount;
+        if (newQuality > MAX_QUALITY) {
+            item.setQuality(MAX_QUALITY);
+        } else {
+            item.setQuality(newQuality);
         }
     }
     
@@ -63,9 +65,11 @@ public abstract class AbstractQualityUpdateStrategy implements QualityUpdateStra
      * @param amount the amount to decrease by
      */
     protected void decreaseQuality(Item item, int amount) {
-        item.quality -= amount;
-        if (item.quality < MIN_QUALITY) {
-            item.quality = MIN_QUALITY;
+        int newQuality = item.getQuality() - amount;
+        if (newQuality < MIN_QUALITY) {
+            item.setQuality(MIN_QUALITY);
+        } else {
+            item.setQuality(newQuality);
         }
     }
     
@@ -75,7 +79,7 @@ public abstract class AbstractQualityUpdateStrategy implements QualityUpdateStra
      * @param item the item to set quality for
      */
     protected void setQualityToZero(Item item) {
-        item.quality = MIN_QUALITY;
+        item.setQuality(MIN_QUALITY);
     }
     
     /**
@@ -85,7 +89,7 @@ public abstract class AbstractQualityUpdateStrategy implements QualityUpdateStra
      * @return true if the item has expired
      */
     protected boolean isExpired(Item item) {
-        return item.sellIn < 0;
+        return item.getSellIn() < 0;
     }
     
     /**
@@ -95,6 +99,6 @@ public abstract class AbstractQualityUpdateStrategy implements QualityUpdateStra
      */
     @Override
     public void updateSellIn(Item item) {
-        item.sellIn -= SELL_IN_DECREASE;
+        item.setSellIn(item.getSellIn() - SELL_IN_DECREASE);
     }
 } 
