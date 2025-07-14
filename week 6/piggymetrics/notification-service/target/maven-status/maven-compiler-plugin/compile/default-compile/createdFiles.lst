@@ -1,0 +1,13 @@
+com/piggymetrics/notification/domain/NotificationType.class
+com/piggymetrics/notification/domain/Notification$Status.class
+com/piggymetrics/notification/NotificationApplication.class
+com/piggymetrics/notification/domain/Notification.class
+com/piggymetrics/notification/domain/Frequency.class
+com/piggymetrics/notification/repository/converter/FrequencyReaderConverter.class
+com/piggymetrics/notification/repository/NotificationRepository.class
+com/piggymetrics/notification/domain/Notification$NotificationBuilder.class
+com/piggymetrics/notification/service/NotificationService.class
+com/piggymetrics/notification/client/AccountServiceClient.class
+com/piggymetrics/notification/controller/NotificationController.class
+com/piggymetrics/notification/config/ResourceServerConfig.class
+com/piggymetrics/notification/domain/Notification$NotificationType.class
